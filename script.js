@@ -40,7 +40,7 @@ startButton.addEventListener('click', e => {
     else
     countMinutes=0;
     totalTime=0;
-    sec = 10;
+    sec = 60;
     var timer = setInterval(function(){
         if (Break)
         timeDisplay.innerHTML=`Break`;
@@ -54,7 +54,7 @@ startButton.addEventListener('click', e => {
         sec--;
         if(sec < 0)
         {
-            sec = 10;
+            sec = 60;
             if (Break) {countBreakMinutes++;}
             else
             {
