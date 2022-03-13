@@ -115,7 +115,7 @@ stopButton.addEventListener('click', e => {
         completdTasks.insertAdjacentHTML('beforeend',`<br> ${counter}- ${taskInput.value} completed in ${totalTimeMinutes} minutes and 0 seconds`);
     }
     else
-    completdTasks.insertAdjacentHTML('beforeend',`<br> ${counter}- ${taskInput.value} completed in ${totalTimeMinutes} minutes and ${10 - sec} seconds`);
+    completdTasks.insertAdjacentHTML('beforeend',`<br> ${counter}- ${taskInput.value} completed in ${totalTimeMinutes} minutes and ${sec} seconds`);
     counter++;    
     Break       = false;
     notPaused   = true;
