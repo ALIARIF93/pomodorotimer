@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POMODORO TIMER</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="heading">POMODORO TIMER</div>
+      <div class="heading1">
+        <div>POMODORO</div>
+        <div>TIMER</div>
+      </div>
+      <div class="timeDisplay">00:00</div>
+      <div class="taskDetails">
+        <input
+          type="text"
+          placeholder="Enter your task name here"
+          class="taskInput"
+        />
+      </div>
+      <div class="timers">
+        <div class="workTime">
+          <p>Work Time(m)</p>
+          <input
+            class="workTimeInput"
+            type="number"
+            placeholder="Enter here (e.g. 25)"
+            value="25"
+          />
+        </div>
+        <div class="breakTime">
+          <p>Break Time(m)</p>
+          <input
+            type="number"
+            placeholder="Enter here (e.g. 5)"
+            value="5"
+            class="breakTimeInput"
+          />
+        </div>
+      </div>
+      <div class="startTimer">
+        <p class="fillInputBanner d-none">
+          Fill the above details before start!
+        </p>
+        <ion-icon class="startButton" name="play-circle"></ion-icon>
+      </div>
+      <div class="afterStartButtons d-none">
+        <ion-icon class="pauseButton" name="pause-circle"></ion-icon>
+        <ion-icon class="resumeButton d-none" name="play-circle"></ion-icon>
+        <ion-icon class="stopButton" name="stop-circle"></ion-icon>
+      </div>
+
+      <div class="completdTasks">
+        <p>Your Completed Tasks</p>
+        <div class="completedTask"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Made by <span>Ali Arif</span></div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
