@@ -113,6 +113,7 @@ stopButton.addEventListener('click', e => {
     {
         timeDisplay.classList.remove("timeDisplayOnBreak");
         completdTasks.insertAdjacentHTML('beforeend',`<br> ${counter}- ${taskInput.value} completed in ${totalTimeMinutes} minutes and 0 seconds`);
+        taskInput.value=="";
     }
     else
     completdTasks.insertAdjacentHTML('beforeend',`<br> ${counter}- ${taskInput.value} completed in ${totalTimeMinutes} minutes and ${60 - sec} seconds`);
@@ -124,7 +125,7 @@ stopButton.addEventListener('click', e => {
     totalTimeMinutes=0;
     clear_timer=true;
     timeDisplay.innerHTML=`00:00`;  
-
+    taskInput.value=="";
 })
 
 
