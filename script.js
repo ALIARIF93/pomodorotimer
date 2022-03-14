@@ -125,7 +125,7 @@ stopButton.addEventListener('click', e => {
     totalTimeMinutes=0;
     clear_timer=true;
     timeDisplay.innerHTML=`00:00`;  
-    taskInput.value=="";
+    taskInput.value="";
 })
 
 
