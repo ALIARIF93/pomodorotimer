@@ -70,6 +70,7 @@ html {
 }
 .timeDisplay {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 15rem;
@@ -85,6 +86,10 @@ html {
 }
 .timeDisplayOnBreak {
   background-color: var(--crimson);
+  font-size: 9rem;
+}
+.breakBanner {
+  font-size: 9rem;
 }
 .taskDetails {
   display: flex;
