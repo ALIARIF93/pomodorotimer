@@ -8,7 +8,7 @@ const resumeButton      = document.querySelector('.resumeButton');
 const pauseButton       = document.querySelector('.pauseButton');
 const stopButton        = document.querySelector('.stopButton');
 const completdTasks     = document.querySelector('.completdTasks');
-const fillInputBanner   = document.querySelector('.fillInputBanner');
+const banner            = document.querySelector('.banner');
 
 
 var isBreak             = false;  //This variable will be true during break time
@@ -60,9 +60,10 @@ const enableInputFields = ()=>{ // This function will be called when user clicks
 
 const validateInputField = ()=>{ // This function will be called when user clicks on start button
                                 // This function will return false in case input field is empty and user clicks on start button.
-    if (taskInput.value=="")
+    if (taskInput.value.trim()=="")
     {
-    fillInputBanner.classList.remove("d-none");
+    banner.innerHTML = 'Fill the above details before start!';
+    banner.classList.remove("d-none");
     return false;
     }
     return true;    
@@ -82,6 +83,7 @@ startButton.addEventListener('click', e => {
         if (notPaused){             // This variable sets to false when user clicks on pause button and will stop incrementing minutes/seconds variables.            
         if (isBreak)                  // If break is going on then display break time counters.
         {
+        banner.classList.add("d-none");     
         timeDisplay.innerHTML=`Break ${countBreakMinutes}:${sec}`;    
         }
         else                        // If break is going on then display break time counters.
@@ -99,9 +101,10 @@ startButton.addEventListener('click', e => {
             {
             resetCountWorkMinutes();
             resetCountBreakMinutes();
+            isBreak=true;
             timeDisplay.innerHTML=`Break`;    
             timeDisplay.classList.add("timeDisplayOnBreak");
-            isBreak=true;
+
             }
             else if(countBreakMinutes <0) // Is Break over?
             {
@@ -117,7 +120,7 @@ startButton.addEventListener('click', e => {
 else {
     if (blink) { timeDisplay.innerHTML=``;}
     else { timeDisplay.innerHTML=`${countWorkMinutes}:${sec+1}`;}
-    blink = !blink;
+    blink = !blink;   
 }
     }, 1000);
 }
@@ -132,6 +135,10 @@ pauseButton.addEventListener('click', e => {
     resumeButton.classList.remove("d-none");
     notPaused = !(notPaused);
     }
+    else{
+        banner.innerHTML = 'Cannot pause timer during break!';
+        banner.classList.remove("d-none");    
+    }
 })
 
 resumeButton.addEventListener('click', e => {
@@ -143,6 +150,11 @@ resumeButton.addEventListener('click', e => {
 stopButton.addEventListener('click', e => {
     clearInterval(timer);
     enableInputFields();
+    startButton.classList.remove("d-none");    // Show start button.
+    pauseButton.classList.remove("d-none");
+    resumeButton.classList.add("d-none");
+    afterStartButtons.classList.add("d-none"); // Hide the pause/resume buttons div.
+
     startButton.classList.remove("d-none");     // show start button
     afterStartButtons.classList.add("d-none"); //hide pause/resume/stop buttons div   
     if (isBreak)
@@ -161,5 +173,5 @@ stopButton.addEventListener('click', e => {
 
 
 taskInput.addEventListener('input', e => {
-    fillInputBanner.classList.add("d-none");
+    banner.classList.add("d-none");
 })
