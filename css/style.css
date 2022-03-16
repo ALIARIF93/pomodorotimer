@@ -79,8 +79,8 @@ html {
   margin-top: 5rem;
   color: var(--white);
   border-radius: 1.5rem;
-  border: 1px solid var(--white);
-  box-shadow: 0.2rem 0.2rem 0 var(--white);
+  border: 1px solid var(--gray);
+  box-shadow: 0.2rem 0.2rem 0 var(--gray);
   background-color: var(--card-background-color);
   transition: all 0.3s linear;
 }
@@ -104,7 +104,7 @@ html {
   padding: 0.5rem 0.7rem;
   border-radius: 0.7rem;
   color: var(--white);
-  border: 5px solid var(--white);
+  border: 2px solid var(--gray);
   background-color: transparent;
   transition: all 0.3s linear;
 }
@@ -187,6 +187,7 @@ ion-icon:hover {
   padding-left: 1rem;
   /* padding-top: 0.5rem; */
   padding-bottom: 1rem;
+  padding-right: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -200,8 +201,8 @@ ion-icon:hover {
   margin-top: 5rem;
   color: var(--white);
   border-radius: 1.5rem;
-  border: 1px solid var(--white);
-  box-shadow: 0.2rem 0.2rem 0 var(--white);
+  border: 1px solid var(--gray);
+  box-shadow: 0.2rem 0.2rem 0 var(--gray);
   background-color: var(--card-background-color);
 }
 
@@ -224,6 +225,8 @@ input[type="number"] {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
   margin: 2.5rem 0;
   /* bottom: 0; */
   display: flex;
@@ -241,12 +244,17 @@ input[type="number"] {
   text-decoration: none;
   color: var(--white);
 }
+.Credits a {
+  font-size: 1rem;
+  color: var(--light-gray);
+}
 .horizontalSpacing {
   height: 3rem;
   margin: 0 1rem;
   border: 1px solid var(--white);
 }
-
+@media (prefers-color-scheme: dark) {
+}
 @media screen and (max-width: 860px) {
   .heading {
     font-size: 7rem;
@@ -256,6 +264,10 @@ input[type="number"] {
     width: 50rem;
     height: 16rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 9rem;
+  }
+
   .taskDetails input {
     width: 50rem;
     font-size: 3.5rem;
@@ -280,6 +292,10 @@ input[type="number"] {
     width: 45rem;
     font-size: 3.5rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 8rem;
+  }
+
   .timers {
     width: 45rem;
   }
@@ -303,6 +319,10 @@ input[type="number"] {
     width: 42rem;
     font-size: 3.5rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 7rem;
+  }
+
   .timers {
     width: 42rem;
   }
@@ -323,6 +343,10 @@ input[type="number"] {
     width: 39rem;
     font-size: 3.5rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 6rem;
+  }
+
   .timers {
     width: 39rem;
   }
@@ -347,6 +371,10 @@ input[type="number"] {
     width: 35rem;
     font-size: 3.5rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 5.5rem;
+  }
+
   .timers {
     width: 35rem;
   }
@@ -378,6 +406,10 @@ input[type="number"] {
     width: 30rem;
     font-size: 3.5rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 5rem;
+  }
+
   .timers {
     width: 30rem;
   }
@@ -411,6 +443,10 @@ input[type="number"] {
     width: 30rem;
     height: 9rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 5rem;
+  }
+
   .taskDetails input {
     width: 30rem;
     font-size: 3.5rem;
@@ -440,6 +476,10 @@ input[type="number"] {
     width: 28rem;
     height: 8rem;
   }
+  .timeDisplayOnBreak {
+    font-size: 5rem;
+  }
+
   .taskDetails input {
     width: 26rem;
     font-size: 3rem;
