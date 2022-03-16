@@ -160,11 +160,11 @@ stopButton.addEventListener('click', e => {
     if (isBreak)
     {
         timeDisplay.classList.remove("timeDisplayOnBreak");
-        completdTasks.insertAdjacentHTML('beforeend',`<br> ${taskCounter} - ${taskInput.value} completed in ${Math.trunc(totalTimeMinutes/60)}h, ${totalTimeMinutes%60}m & 0s`);
+        completdTasks.insertAdjacentHTML('beforeend',`<br> ${taskCounter} - ${taskInput.value} completed in ${Math.trunc(totalTimeMinutes/60)}h : ${totalTimeMinutes%60}m : 0s`);
         taskInput.value=="";
     }
     else
-    completdTasks.insertAdjacentHTML('beforeend',`<br> ${taskCounter} - ${taskInput.value} completed in  ${Math.trunc(totalTimeMinutes/60)}h, ${totalTimeMinutes%60}m & ${59-sec}s`);
+    completdTasks.insertAdjacentHTML('beforeend',`<br> ${taskCounter} - ${taskInput.value} completed in  ${Math.trunc(totalTimeMinutes/60)}h : ${totalTimeMinutes%60}m : ${59-sec}s`);
     taskCounter++;    
     resetCounters();
     timeDisplay.innerHTML=`00:00`;  
